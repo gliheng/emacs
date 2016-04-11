@@ -7,6 +7,7 @@
 
 ; show matching parenthesis
 (show-paren-mode 1)
+(electric-pair-mode 1)
 
 ; hide menu bar
 ; (menu-bar-mode 0) 
@@ -20,6 +21,12 @@
 
 ; change default home directory
 (setq default-directory "~")
+
+;; image
+; (setq fancy-splash-image (expand-file-name "logo.png" user-emacs-directory)) 
+
+; font settings
+(set-default-font "Source Code Pro-12")
 
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
@@ -47,10 +54,16 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
 ; multiple-cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-word-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-word-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+; auto-complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+
+
