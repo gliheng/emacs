@@ -32,6 +32,8 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+(setq linum-format " %2d ")
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
@@ -40,7 +42,6 @@
  a list of installed packages or nil for every skipped package."
   (mapcar
    (lambda (package)
-     ;; (package-installed-p 'evil)
      (if (package-installed-p package)
          nil
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
@@ -54,9 +55,9 @@
   'projectile
   'web-mode
   'yasnippet
-  'multiple-cursors
-  'evil)
+  'multiple-cursors)
 
+; evil mode
 ; (require 'evil)
 ; (evil-mode 1)
 
