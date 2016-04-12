@@ -6,8 +6,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ; show matching parenthesis
-(show-paren-mode 1)
-(electric-pair-mode 1)
+(show-paren-mode t)
+(electric-pair-mode t)
+(global-linum-mode t)
 
 ; hide menu bar
 ; (menu-bar-mode 0) 
@@ -23,7 +24,7 @@
 (setq default-directory "~")
 
 ;; image
-; (setq fancy-splash-image (expand-file-name "startup.png" user-emacs-directory))
+(setq fancy-splash-image (expand-file-name "startup.jpeg" user-emacs-directory))
 
 ; font settings
 (set-default-font "Source Code Pro-12")
