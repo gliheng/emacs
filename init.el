@@ -23,7 +23,7 @@
 (setq default-directory "~")
 
 ;; image
-; (setq fancy-splash-image (expand-file-name "logo.png" user-emacs-directory)) 
+; (setq fancy-splash-image (expand-file-name "startup.png" user-emacs-directory))
 
 ; font settings
 (set-default-font "Source Code Pro-12")
@@ -31,14 +31,27 @@
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
-(setq 
-  my-packages '(auto-complete
-               markdown-mode
-               web-mode
-               yasnippet
-               multiple-cursors
-               evil
-               ))   
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+ a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     ;; (package-installed-p 'evil)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+(ensure-package-installed
+  'auto-complete
+  'markdown-mode
+  'projectile
+  'web-mode
+  'yasnippet
+  'multiple-cursors
+  'evil)
 
 ; (require 'evil)
 ; (evil-mode 1)
@@ -66,4 +79,5 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
-
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
