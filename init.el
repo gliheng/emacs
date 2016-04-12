@@ -28,6 +28,9 @@
 ; font settings
 (set-default-font "Source Code Pro-12")
 
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
@@ -79,5 +82,5 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+; projectile
+(projectile-global-mode)
