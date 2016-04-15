@@ -50,6 +50,7 @@
    packages))
 
 (ensure-package-installed
+  'dracula-theme
   'auto-complete
   'markdown-mode
   'projectile
