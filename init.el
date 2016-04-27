@@ -32,6 +32,7 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+; customize line number format
 (setq linum-format " %2d ")
 
 ; show trailing whiltespace
