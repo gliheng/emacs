@@ -34,6 +34,9 @@
 
 (setq linum-format " %2d ")
 
+; show trailing whiltespace
+(setq show-trailing-whitespace t)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
