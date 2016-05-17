@@ -38,6 +38,9 @@
 ; show trailing whiltespace
 (setq show-trailing-whitespace t)
 
+; tab
+(setq default-tab-width 4)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
