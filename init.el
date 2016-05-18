@@ -41,6 +41,9 @@
 ; tab
 (setq default-tab-width 4)
 
+; coding
+(prefer-coding-system 'utf-8)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ; packages to install
