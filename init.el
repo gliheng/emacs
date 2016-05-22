@@ -10,6 +10,12 @@
 (electric-pair-mode t)
 (global-linum-mode t)
 
+;; fuzzy matching for opening files
+(ido-mode t)
+
+;; undo window layouts
+(winner-mode t)
+
 ;; hide menu bar
 ;; (menu-bar-mode 0) 
 
