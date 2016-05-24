@@ -44,8 +44,9 @@
 ;; show trailing whiltespace
 (setq show-trailing-whitespace t)
 
-;; tab
+;; tab width 4, use space for indentation
 (setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 ;; coding
 (prefer-coding-system 'utf-8)
