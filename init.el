@@ -59,6 +59,9 @@
 ;; S-<left> S-<right> S-<up> S-<down> to move between windows
 (windmove-default-keybindings)
 
+;; pasted text replace current selection
+(delete-selection-mode t)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ;; packages to install
