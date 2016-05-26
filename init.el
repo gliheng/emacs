@@ -14,6 +14,7 @@
 (ido-mode t)
 
 ;; undo window layouts
+;; C-c <left>, C-c <right> to move through window history
 (winner-mode t)
 
 ;; hide menu bar
@@ -53,6 +54,10 @@
 
 ;; no backup
 (setq make-backup-files nil)
+
+;; window move keys
+;; S-<left> S-<right> S-<up> S-<down> to move between windows
+(windmove-default-keybindings)
 
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
