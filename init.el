@@ -12,6 +12,8 @@
 
 ;; fuzzy matching for opening files
 (ido-mode t)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
 
 ;; undo window layouts
 ;; C-c <left>, C-c <right> to move through window history
@@ -34,7 +36,7 @@
 (setq fancy-splash-image (expand-file-name "emacs.png" user-emacs-directory))
 
 ;; font settings
-(set-default-font "Source Code Pro-12")
+(set-default-font "Source Code Pro-14")
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
