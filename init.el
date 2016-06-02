@@ -51,11 +51,18 @@
 (setq default-tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-;; coding
+;; encoding
 (prefer-coding-system 'utf-8)
 
-;; no backup
-(setq make-backup-files nil)
+;; no autosave or backup
+; (setq make-backup-files nil)
+; (setq auto-save-default nil)
+
+;; save autosave and backup somewhere else
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;; window move keys
 ;; S-<left> S-<right> S-<up> S-<down> to move between windows
