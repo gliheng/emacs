@@ -71,6 +71,10 @@
 ;; pasted text replace current selection
 (delete-selection-mode t)
 
+;; revert buffer if file is changed on disk
+(global-auto-revert-mode 1)
+; (setq auto-revert-verbose nil)
+
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 
 ;; packages to install
