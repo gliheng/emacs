@@ -1,8 +1,5 @@
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
-
+;; config pathes
+(add-to-list 'load-path "~/.emacs.d/lib")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; show matching parenthesis
@@ -72,10 +69,31 @@
 (delete-selection-mode t)
 
 ;; revert buffer if file is changed on disk
-(global-auto-revert-mode 1)
+(global-auto-revert-mode t)
 ; (setq auto-revert-verbose nil)
 
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; full path in title bar
+(setq-default frame-title-format "%b (%f)")
+
+;; no bell
+(setq ring-bell-function 'ignore)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; config package repository
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
+
+;; Download the ELPA archive description if needed.
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 ;; packages to install
 (defun ensure-package-installed (&rest packages)
@@ -97,7 +115,10 @@
   'projectile
   'web-mode
   'yasnippet
-  'multiple-cursors)
+  'multiple-cursors
+  'clojure-mode
+  'paredit
+  'tagedit)
 
 ;; evil mode
 ;; (require 'evil)
@@ -108,7 +129,8 @@
 
 ;; web-mode
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 
 ;; yasnippet
 (require 'yasnippet)
