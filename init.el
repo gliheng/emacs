@@ -42,10 +42,10 @@
 (setq linum-format " %2d ")
 
 ;; show trailing whiltespace
-(setq show-trailing-whitespace t)
+(setq-default show-trailing-whitespace t)
 
 ;; tab width 4, use space for indentation
-(setq default-tab-width 4)
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 ;; encoding
