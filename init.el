@@ -81,6 +81,26 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;; commands ;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun unix-file ()
+  "Change the current buffer to Unix line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'unix t))
+
+(defun dos-file ()
+  "Change the current buffer to DOS line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'dos t))
+
+(defun mac-file ()
+  "Change the current buffer to Mac line-ends."
+  (interactive)
+  (set-buffer-file-coding-system 'mac t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;; plugins config ;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -114,6 +134,7 @@
   'markdown-mode
   'projectile
   'web-mode
+  'protobuf-mode
   'yasnippet
   'multiple-cursors
   'clojure-mode
