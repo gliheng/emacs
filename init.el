@@ -81,7 +81,8 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
-
+;; show column number
+(setq column-number-mode t)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; commands ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
