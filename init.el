@@ -83,6 +83,10 @@
 
 ;; show column number
 (setq column-number-mode t)
+
+;; use narrow to region
+(put 'narrow-to-region 'disabled nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; commands ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -175,3 +179,4 @@
 
 ;; projectile
 (projectile-global-mode)
+
