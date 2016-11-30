@@ -87,6 +87,22 @@
 ;; use narrow to region
 (put 'narrow-to-region 'disabled nil)
 
+;; an easy command for opening new shells
+(defun new-shell ()
+  "Opens a new shell buffer *shell*
+    asterisks (*shell*) in the current directory and changes the
+    prompt to 'bash>'."
+  (interactive)
+  (let ((name "*shell*"))
+    (pop-to-buffer name)
+    (unless (eq major-mode 'shell-mode)
+      (shell (current-buffer))
+      (sleep-for 0 200)
+      (delete-region (point-min) (point-max))
+      (comint-simple-send (get-buffer-process (current-buffer)) 
+                          (concat "export PS1=\"\033[33mBash\033[0m:\033[35m\\W\033[0m$ \"")))))
+(global-set-key (kbd "C-c s") 'new-shell)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;; commands ;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
