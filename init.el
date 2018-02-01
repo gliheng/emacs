@@ -153,11 +153,13 @@
   'dracula-theme
   'auto-complete
   'markdown-mode
+  'editorconfig
   'projectile
   'web-mode
   'js2-mode
   'protobuf-mode
   'yasnippet
+  'imenu-anywhere
   'multiple-cursors
   'clojure-mode
   'paredit
@@ -175,8 +177,9 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
+
+(editorconfig-mode t)
 
 ;; yasnippet
 (require 'yasnippet)
@@ -200,17 +203,5 @@
 ;; projectile
 (projectile-global-mode)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (js2-mode yasnippet web-mode tagedit protobuf-mode projectile paredit multiple-cursors markdown-mode dracula-theme clojure-mode auto-complete))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; imenu-anywhere
+(global-set-key (kbd "C-.") 'imenu-anywhere)
