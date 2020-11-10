@@ -33,7 +33,7 @@
 (setq fancy-splash-image (expand-file-name "emacs.png" user-emacs-directory))
 
 ;; font settings
-(set-default-font "Source Code Pro-16")
+(set-face-attribute 'default nil :family "Source Code Pro")
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
